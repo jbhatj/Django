@@ -1,16 +1,19 @@
 <br>
 <br>
 {% with name="World" greeting="Hello" %}
-<form action= "{% url "views.detail" {{name}} %}"  method='post'>
-    <input type="radio" name="product" value="QOSl"> QOS live<br>
-    <input type="radio" name="product" value="QOSv"> QOS vod<br>
-    <input type="radio" name="product" value="SM"> Security Monitor<br>
+<form action="detail" method='post'>
+    <input type="radio" name="product" value="live"> QOS live<br>
+    <input type="radio" name="product" value="vod"> QOS vod<br>
+    <input type="radio" name="product" value="sm"> Security Monitor<br>
     <br><br>
      AnalyzerId <input type="text" name="AnalyzerId" value="">
-     <br> <br> AnalyzerName <input type="text" name="AnalyzerName" value=""><br>
+   <!--  <br> <br> AnalyzerName <input type="text" name="AnalyzerName" value=""><br> -->
      <br><br> 
-     <input type="radio" name="CubeType1" value="QOSl">Console Cube<br>
-     <input type="radio" name="CubeType2" value="QOSv">Time Cube<br>
+     From Time : <input type="datetime-local" name="from_time"> <br>
+     To Time : <input type='datetime-local' name="to_time"> <br> <br>
+     <input type="radio" name="CubeType" value="c_c">Console Cube<br>
+     <input type="radio" name="CubeType" value="t_c">Time Cube<br>
+
      <input type="submit" value="Submit">
 </form>
 {% endwith %}

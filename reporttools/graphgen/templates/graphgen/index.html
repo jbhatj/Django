@@ -1,19 +1,26 @@
+
+{% load staticfiles %}
+<link rel='stylesheet' href='{% static "css/base.css" %}' />
+<script type="text/javascript" href='static/js/form_validation.js' ></script><!_--'{% static  "js/form_validation.js" %}' > </script> -->
 <br>
-<br>
-{% with name="World" greeting="Hello" %}
-<form action="detail" method='post'>
+<h1> HELLO PEOPLE </h1>
+<form action="detail"  method="post" onsubmit="return validateForm()" >
     <input type="radio" name="product" value="live"> QOS live<br>
     <input type="radio" name="product" value="vod"> QOS vod<br>
     <input type="radio" name="product" value="sm"> Security Monitor<br>
     <br><br>
-     AnalyzerId <input type="text" name="AnalyzerId" value="">
+     AnalyzerId <input type="text" name="AnalyzerId" value="" id="aid">
    <!--  <br> <br> AnalyzerName <input type="text" name="AnalyzerName" value=""><br> -->
      <br><br> 
+
+    <input type="checkbox" name="machine" value="sjc1" checked> sjc1 <br>
+    <input type="checkbox" name="machine" value="dfw1" checked> dfw1 <br>
+    <input type="checkbox" name="machine" value="iad1" checked> iad1 <br>
+
      From Time : <input type="datetime-local" name="from_time"> <br>
      To Time : <input type='datetime-local' name="to_time"> <br> <br>
-     <input type="radio" name="CubeType" value="c_c">Console Cube<br>
-     <input type="radio" name="CubeType" value="t_c">Time Cube<br>
+     <input type="checkbox" name="CubeType" value="c_c" checked>Console Cube<br>
+     <input type="checkbox" name="CubeType" value="t_c" checked>Time Cube<br>
 
-     <input type="submit" value="Submit">
+     <input type="submit" value="Submit" >
 </form>
-{% endwith %}

@@ -12,18 +12,21 @@ class Machine(models.Model) :
         return self.machine_name
 
 class Machine_sjc1(models.Model) :
+    user_id = models.CharField(max_length=1000)
     bucket_time = models.IntegerField(default=0)
     total_rules = models.IntegerField(default=0)
     def __str__(self) :
         return 'From sjc1'
 
 class Machine_dfw1(models.Model) :
+    user_id = models.CharField(max_length=1000)
     bucket_time = models.IntegerField(default=0)
     total_rules = models.IntegerField(default=0)
     def __str__(self) :
         return 'From dfw1'
 
 class Machine_iad1(models.Model) :
+    user_id = models.CharField(max_length=1000)
     bucket_time = models.IntegerField(default=0)
     total_rules = models.IntegerField(default=0)
     def __str__(self) :

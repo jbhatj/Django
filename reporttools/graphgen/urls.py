@@ -6,5 +6,5 @@ app_name="graphgen"
 urlpatterns=[
     url(r'^$',views.index,name="index"),
     url(r'^detail$',views.detail,name="detail"),
-    url(r'^dochart$',views.dochart,name="dochart"),
+#    url(r'^dochart$',views.dochart,name="dochart"),
     ]

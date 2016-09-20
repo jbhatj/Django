@@ -13,7 +13,7 @@ def formating(l,name,uid) :
 def do_connection(from_time,to_time,time_per_unit,product,cube_type,uid) :# arguments :(host,port),from_time,to_time,time_in=60(i.e set to per minute by default),
     port = "8159"
     hosts   = ["adbq1.other.dfw1.dna.akamai.com","adbq1.other.iad1.dna.akamai.com","adbq1.other.sjc1.dna.akamai.com" ]
- #   cube_id =  choose_qos_sm(product,cube_type[0])
+ #  ube_id =  choose_qos_sm(product,cube_type[0])
     for host in hosts :
     #    try :
             connection = telnetlib.Telnet(host,port,timeout=10)

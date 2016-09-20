@@ -31,3 +31,8 @@ class Machine_iad1(models.Model) :
     total_rules = models.IntegerField(default=0)
     def __str__(self) :
         return 'From iad1'
+     
+class Users(models.Model) :
+    AnalyzerId = models.IntegerField(default=0)
+    AnalyzerName= models.CharField(max_length=1000)
+    prod_type = models.CharField(max_length=10)

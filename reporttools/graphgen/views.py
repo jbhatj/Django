@@ -3,7 +3,6 @@ from django.urls   import reverse
 from django.template import loader
 from django.http import HttpResponse,HttpResponseRedirect
 from script import choose_qos_sm,fetch_details,generate_unique_id
-from . import index_html
 from fetch_data import do_connection
 from chartit import DataPool,Chart
 from .models import Machine,Machine_sjc1,Machine_dfw1,Machine_iad1
@@ -28,7 +27,7 @@ def detail(request) :
     string = "product : %s <br> AnalyzerId : %s <br> Cube_type : %s <br> from Time : %s<br> To_Time : %s <br> "%(product,analyzerId,cube_type,from_time,to_time)
     uid = generate_unique_id()
     do_connection(From_time,To_time,60,product,cube_type,uid)
-
+### Charting must be made as a different chart from above
     data = DataPool(series=[{ 'options' : { 'source' : Machine_sjc1.objects.filter(user_id = uid) }, 'terms' : [{'bucket_time1' : 'bucket_time', 'sjc1' : 'total_rules'}]},
                             { 'options' : { 'source' : Machine_iad1.objects.filter(user_id = uid) }, 'terms' : [{'bucket_time2' : 'bucket_time', 'iad1' : 'total_rules'}]},
                             { 'options' : { 'source' : Machine_dfw1.objects.filter(user_id = uid) }, 'terms' : [{'bucket_time3' : 'bucket_time', 'dfw1' : 'total_rules'}]}
